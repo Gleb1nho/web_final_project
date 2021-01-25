@@ -1,0 +1,15 @@
+extends layout
+
+block content
+  main#indexmain
+    div#betterback1.betterback
+      a#index-res(href="/guest/create") Забронировать зал 
+      a#index-list(href="/guest_all") Просмотреть все брони
+      div#form-wrapper
+        span#searchspan Найти бронь по идентификатору
+        form#search_form(action="" method="GET")
+          input#resid(type="text", placeholder="Уникальный идентификатор вашей брони")
+          button#searchbutton(type='submit') Найти
+        
+  script
+    include ../public/javascripts/find_by_id.js

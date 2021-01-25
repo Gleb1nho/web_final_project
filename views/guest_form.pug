@@ -1,0 +1,64 @@
+extends layout
+
+block content
+  main
+    div.betterback#betterback2
+      form#guest_form(method='POST' action='')
+        div#first_name_wrapper
+          label#first_name_label(for="first_name") Имя:
+          input#first_name(type='text', placeholder='Ваше имя', name='first_name', required='true', value=(undefined===guest ? '' : guest.first_name))
+        div#patronymic_wrapper
+          label#patronymic_label(for="patronymic") Отчество:
+          input#patronymic_input(type='text', placeholder='Ваше отчество', name='patronymic', required='true', value=(undefined===guest ? '' : guest.patronymic))
+        div#date_wrapper
+          label#date_label(for="date_of_reservation") Планируемая дата бронирования:
+          input#date_input(type="date", name="date_of_reservation", required='true', value=(undefined===guest ? '' : guest.date_of_reservation_formatted))
+        div#room_list.form_list
+          ul Вместимость залов: 
+            li  "Большой": 500 человек
+            li  "Средний": 300 человек
+            li  "Малый": 100 человек
+        div.radio_wrapper
+          for room in rooms
+            if guest
+              if room === guest.room
+                div.form_radio
+                  input(type="radio", name='room', class='room', id=room, value=room, required, checked)
+                  label(for=room class='room_label') #{room}
+              else
+                div.form_radio
+                  input(type="radio", name='room', class='room', id=room, required, value=room )
+                  label(for=room class='room_label') #{room}
+            if !guest
+              div.form_radio
+                input(type="radio", name='room', class='room', id=room, required, value=room )
+                label(for=room class='room_label') #{room}
+        div#time_list.form_list
+          ul Временные промежутки бронирования: 
+            li 🌞Утро: 10-14:00
+            li 🌆Вечер: 16-23:00
+        div.radio_wrapper
+          for time in times
+            if guest
+              if time === guest.time_of_reservation
+                div.form_radio
+                  input(type="radio", name='time', id=time, value=time, required, checked)
+                  label(for=time) #{time}
+              else
+                div.form_radio
+                  input(type="radio", name='time', id=time, required, value=time )
+                  label(for=time) #{time}
+            if !guest
+              div.form_radio
+                input(type="radio", name='time', id=time, required, value=time )
+                label(for=time) #{time}
+        button#submitter(type='submit') Отправить
+
+        if errors
+          ul
+            for error in errors
+              li(style='color: red;')= error
+
+  script
+    include ../public/javascripts/datescript.js
+    

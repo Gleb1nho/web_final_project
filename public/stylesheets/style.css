@@ -1,0 +1,399 @@
+body {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  background: url('../images/ornament.jpg') 100% 100%;
+}
+
+a {
+  color: rgb(238, 255, 255);
+}
+
+header {
+  flex-basis: 20%;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(19, 0, 0);
+  color: rgb(255, 255, 255);
+}
+
+#toyhana,
+#bankethall {
+  flex-basis: 20%;
+  text-align: right;
+  padding-top: 3%;
+  font-size: 2em;
+  font-style: italic;
+}
+
+#restname {
+  padding-top: 2%;
+  flex-basis: 60%;
+  text-align: center;
+  font-size: 4em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#bankethall {
+  text-align: left;
+}
+
+footer {
+  flex-basis: 5%;
+  background: rgb(19, 0, 0);
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-around;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#home, #phone, #address {
+  padding-top: 0.2%;
+}
+
+#address {
+  flex-basis: 30%;
+}
+
+#home {
+  flex-basis: 30%;
+  text-decoration: none;
+  text-align: center;
+}
+
+#phone {
+  flex-basis: 30%;
+  text-decoration: none;
+  text-align: right;
+}
+
+main {
+  font-size: 1.5em;
+  flex-basis: 75%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.329);
+}
+
+/* Тут в основном вёрстка index */
+
+#indexmain {
+  font-size: 2em;
+}
+
+.betterback {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  background: rgba(128, 128, 128, 0.87);
+  border-radius: 30px;
+}
+
+#betterback1 {
+  height: 60%;
+  align-items: center;
+  justify-content: space-around;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#index-res,
+#index-list {
+  flex-basis: 10%;
+}
+
+#form-wrapper {
+  flex-basis: 30%;
+}
+
+#search_form {
+  display: flex;
+  justify-content: center;
+}
+
+#resid {
+  flex-basis: 80%;
+  height: 5vh;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+  border-top: 1px solid black;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: none;
+
+
+  outline: none;
+  font-size: 0.5em;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#searchbutton {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+  border-left: none;
+  background-color: rgb(204, 204, 204);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  
+  outline: none;
+
+}
+
+/* Верстка для формы бронирования */
+
+#betterback2 {
+  height: 95%;
+  flex-basis: 40%;
+  justify-content: center;
+}
+
+#guest_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#first_name,
+#patronymic_input,
+#date_input {
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid black;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#first_name_wrapper,
+#patronymic_wrapper,
+#date_wrapper {
+  padding-bottom: 5px;
+  display: flex;
+}
+
+#first_name,
+#patronymic_input {
+  width: 25vw;
+}
+
+/* Стилизация радиокнопочек */
+
+.radio_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.form_radio input[type=radio] {
+  display: none;
+}
+
+.form_radio label {
+  cursor: pointer;
+  border: 1px solid black;
+  border-right: none;
+  user-select: none;
+  background: rgb(114, 114, 114);
+  padding: 0 5px 0 5px;
+}
+
+.radio_wrapper .form_radio:first-child label {
+  border-radius: 6px 0 0 6px;
+}
+
+.radio_wrapper .form_radio:last-child label {
+  border-radius: 0 6px 6px 0;
+  border-right: 1px solid black;
+}
+
+.radio_wrapper input[type=radio]:checked + label {
+  background: rgb(201, 255, 201);
+  color: black;
+}
+
+.radio_wrapper label:hover {
+  background-color: rgb(90, 90, 90);
+}
+
+/* Стилизация списков формы*/
+.form_list {
+  font-size: 0.7em;
+}
+
+.form_list ul {
+  list-style-type: none;
+  display: flex;
+}
+
+/* Стилизация кнопки отправления данных */
+#submitter {
+  margin-top: 20px;
+  width: 20%;
+  height: 6vh;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: 0.5em;
+}
+
+#submitter:hover {
+  background-color: rgb(212, 212, 212);
+}
+
+#submitter:active {
+  background-color: rgb(194, 194, 194);
+}
+
+/* Стилизация информации о конкретном госте */
+#guestid {
+  text-align: center;
+}
+
+#blinking_text {
+  text-align: center;
+  color: rgb(255, 198, 198);
+  animation: blinking 2s linear infinite;
+}
+
+#betterback3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 80%;
+}
+
+@keyframes blinking {
+  50% {
+    opacity: 0;
+  }
+}
+
+.res_management {
+  display: flex;
+  justify-content: center;
+}
+
+.manage_btn {
+  border: 1px solid black;
+  outline: none;
+  height: 5vh;
+}
+
+#deletebut {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#updatebut {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#deletebut:hover {
+  background: rgb(255, 103, 103);
+  color: white;
+}
+
+#deletebut:active {
+  background: rgb(255, 67, 67);
+  color: white;
+}
+
+#updatebut:hover {
+  background: rgb(0, 212, 0);
+  color: white;
+}
+
+#updatebut:active {
+  background: rgb(0, 182, 0);
+  color: white;
+}
+
+/* Стили для мобильных устройств (совсем немного адаптивности) */
+
+@media all and (orientation: portrait) {
+  #betterback1 {
+    flex-basis: 90%;
+  }
+
+  #betterback2,
+  #betterback3 {
+    flex-basis: 80%;
+    font-size: 2em;
+  }
+
+  #betterback3 {
+    height: 90%;
+  }
+
+  #indexmain {
+    font-size: 3.5em;
+  }
+
+  #first_name,
+  #patronymic_input {
+    width: 40vw;
+  }
+
+  #first_name,
+  #patronymic_patronymic {
+    font-size: 0.7em;
+  }
+
+  #first_name::placeholder,
+  #patronymic_input::placeholder {
+    font-size: 1.5em;
+  }
+  
+  #guest_form {
+    font-size: 0.8em;
+  }
+
+  #date_label {
+    font-size: 0.8em;
+    flex-basis: 80%;
+  }
+
+  #date_input {
+    height: 100%;
+    font-size: 0.5em;
+  }
+
+  footer {
+    font-size: 1.5em;
+  }
+
+  #restname {
+    font-size: 6em;
+  }
+}
+
+@media all and (orientation: landscape) and (max-width: 1025px) {
+  #betterback1 {
+    flex-basis: 90%;
+  }
+
+  #betterback2,
+  #betterback3 {
+    flex-basis: 80%;
+  }
+
+  #indexmain {
+    font-size: 3.5em;
+  }
+
+  footer {
+    font-size: 1.5em;
+  }
+
+  #restname {
+    font-size: 6em;
+  }
+}

@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  main
+    div.betterback#betterback3
+      if guest_info
+        a#guestid(href=guest_info.url)= guest_info._id
+        span#blinking_text УНИКАЛЬНЫЙ НОМЕР ВАШЕЙ БРОНИ, ЗАПИШИТЕ/ЗАПОМНИТЕ/ЗАСКРИНЬТЕ ЕГО ДЛЯ ПРЕДЪЯВЛЕНИЯ НА РЕЦЕПЦИИ ИЛИ ОТМЕНЫ/ИЗМЕНЕНИЯ БРОНИ
+        div.user_data
+          ul Данные забронировавшего:
+            li= 'Имя: '+guest_info.first_name
+            li= 'Отчество: '+guest_info.patronymic
+            li= 'Дата брони: '+guest_info.date_of_reservation_formatted
+            li= 'Бронируемый зал: '+guest_info.room
+            li= 'Время брони: '+guest_info.time_of_reservation
+
+        div.res_management
+          form#deleteform(action=guest_info.url+'/delete' method="POST")
+            button#deletebut.manage_btn(type='submit') Отменить бронь
+          
+          form#updateform(action=guest_info.url+'/update' method="GET")
+            button#updatebut.manage_btn(type='submit') Изменить бронь
+
+      if !guest_info
+        h2= error

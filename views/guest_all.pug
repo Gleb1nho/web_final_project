@@ -1,0 +1,11 @@
+extends layout
+
+block content
+  main
+    div#betterback3.betterback
+      ul
+        each guest in guest_list
+          li
+            a(href=guest.url) #{guest.first_name} | #{guest.patronymic} | #{guest.date_of_reservation_formatted} | #{guest.room} | #{guest.time_of_reservation}
+        else
+          li Активной брони нет
