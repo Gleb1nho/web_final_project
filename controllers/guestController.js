@@ -16,10 +16,8 @@ exports.guest_create_get = function(req, res, next) {
 
 //Создать новую бронь - POST
 exports.guest_create_post = [
-    body('first_name').trim().isLength({ min: 1 }).escape().withMessage('Имя - обязательное для заполнения поле!')
-    .isAlphanumeric().withMessage('Недопустимые символы в имени!'),
-    body('patronymic').trim().isLength({ min: 1 }).escape().withMessage('Отчество - обязательное для заполнения поле!')
-    .isAlphanumeric().withMessage('Недопустимые символы в отчестве!'),
+    body('first_name').trim().isLength({ min: 1 }).escape().withMessage('Имя - обязательное для заполнения поле!'),
+    body('patronymic').trim().isLength({ min: 1 }).escape().withMessage('Отчество - обязательное для заполнения поле!'),
     body('date_of_reservation', 'Недопустимая дата').optional({ checkFalsy: true }).isISO8601().toDate(),
 
     (req, res, next) => {
@@ -87,10 +85,8 @@ exports.guest_change_get = function(req, res, next) {
 
 //Изменить параметры брони - GET
 exports.guest_change_post = [
-    body('first_name').trim().isLength({ min: 1 }).escape().withMessage('Имя - обязательное для заполнения поле!')
-    .isAlphanumeric().withMessage('Недопустимые символы в имени!'),
-    body('patronymic').trim().isLength({ min: 1 }).escape().withMessage('Отчество - обязательное для заполнения поле!')
-    .isAlphanumeric().withMessage('Недопустимые символы в отчестве!'),
+    body('first_name').trim().isLength({ min: 1 }).escape().withMessage('Имя - обязательное для заполнения поле!'),
+    body('patronymic').trim().isLength({ min: 1 }).escape().withMessage('Отчество - обязательное для заполнения поле!'),
     body('date_of_reservation', 'Недопустимая дата').optional({ checkFalsy: true }).isISO8601().toDate(),
 
     (req, res, next) => {
