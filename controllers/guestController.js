@@ -104,7 +104,6 @@ exports.guest_change_post = [
         // Сохраняем с проверкой того, что ни один зал не бронируется в один день два раза подряд
         Guest.find({date_of_reservation: guest.date_of_reservation, room: guest.room, time_of_reservation: guest.time_of_reservation}, 
             'date_of_reservation room time_of_reservation').exec(function (err, same_date_room) {
-                console.log(same_date_room)
             if (err) { return console.log(err) }
             else {
                 if (same_date_room.length === 0 && errors.isEmpty()) {
